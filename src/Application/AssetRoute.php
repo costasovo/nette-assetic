@@ -68,7 +68,7 @@ class AssetRoute implements Application\IRouter
 		$this->assetManager = $assetManager;
 	}
 
-	public function match(Http\IRequest $httpRequest)
+	public function match(Http\IRequest $httpRequest): void
 	{
 		$path = $httpRequest->getUrl()->getPath();
 
@@ -84,7 +84,7 @@ class AssetRoute implements Application\IRouter
 	{
 	}
 
-	private function dumpAsset(AssetInterface $asset)
+	private function dumpAsset(AssetInterface $asset): void
 	{
 		// HTTP caching
 		$mtime = gmdate('D, d M y H:i:s', $asset->getLastModified()) . 'GMT';

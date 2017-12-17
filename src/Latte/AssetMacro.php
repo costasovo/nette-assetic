@@ -15,7 +15,7 @@ class AssetMacro implements IMacro
 	{
 	}
 
-	public function nodeOpened(MacroNode $node)
+	public function nodeOpened(MacroNode $node): void
 	{
 		$assetName = $node->args;
 
@@ -23,7 +23,7 @@ class AssetMacro implements IMacro
 		$node->openingCode = '<?php echo call_user_func($this->filters->_asset, "' . $assetName . '"); ?>';
 	}
 
-	public function nodeClosed(MacroNode $node)
+	public function nodeClosed(MacroNode $node): void
 	{
 	}
 }

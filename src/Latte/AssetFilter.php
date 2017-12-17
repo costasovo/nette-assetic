@@ -14,11 +14,8 @@ class AssetFilter
 		$this->assetManager = $assetManager;
 	}
 
-	/**
-	 * @param string $assetName
-	 * @return string
-	 */
-	public function __invoke($assetName)
+
+	public function __invoke(string $assetName): string
 	{
 		$asset = $this->assetManager->get($assetName);
 

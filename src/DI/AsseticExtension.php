@@ -18,7 +18,7 @@ class AsseticExtension extends DI\CompilerExtension
 		'assets' => [],
 	];
 
-	public function loadConfiguration()
+	public function loadConfiguration(): void
 	{
 		$builder = $this->getContainerBuilder();
 		$config = $this->getConfig(self::$configDefaults);
@@ -80,7 +80,7 @@ class AsseticExtension extends DI\CompilerExtension
 		}
 	}
 
-	public function afterCompile(PhpGenerator\ClassType $class)
+	public function afterCompile(PhpGenerator\ClassType $class): void
 	{
 		$config = $this->getConfig(self::$configDefaults);
 		$initialize = $class->methods['initialize'];

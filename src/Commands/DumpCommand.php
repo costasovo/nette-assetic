@@ -25,14 +25,14 @@ class DumpCommand extends Command
 		parent::__construct();
 	}
 
-	protected function configure()
+	protected function configure(): void
 	{
 		$this
 			->setName('assetic:dump')
 			->setDescription('Dump assets to document root');
 	}
 
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): void
 	{
 		$output->writeln('Dumping assets:');
 		foreach ($this->assetManager->getNames() as $name) {
